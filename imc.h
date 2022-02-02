@@ -14,8 +14,26 @@ class IMC : public QMainWindow
 public:
     IMC(QWidget *parent = nullptr);
     ~IMC();
+private slots:
+    void on_btnCalcular_clicked();
+
+    void on_action_Nuevo_triggered();
+
+    void on_action_Abrir_triggered();
+
+    void on_action_Guardar_triggered();
+
+    void on_action_Calcular_triggered();
+
+
+    void on_action_Salir_triggered();
 
 private:
     Ui::IMC *ui;
+    void limpiar ();
+    void calcular();
+    void guardar();
+    void abrir();
+
 };
 #endif // IMC_H
