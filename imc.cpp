@@ -38,16 +38,25 @@ void IMC::calcular()
     float st= (peso/(altura*altura))*10000;
     ui->outIMC->setText(QString:: number(st)+ " kg/m²");
     ui->outAltura->setText(QString::number(altura)+" cm");
-    ui->outActual->setText(QString::number(peso)+ "kg");
+    ui->outActual->setText(QString::number(peso)+ " kg");
+    ui->outMax->setText((QString::number(peso)+" kg"));
+    ui->outMin->setText((QString::number(peso)+ " kg"));
+    if(st < 18.5){
+        ui->outimc->setText("Bajo peso");
+    }else if(st < 24.9){
+        ui->outimc->setText("Normal");
+    }else if(st < 29.9){
+        ui->outimc->setText("Sobrepeso");
+    }else if(st >=30){
+        ui->outimc->setText("Obeso");
+    }
+    mover(st);
+
     limpiar ();
 }
 
 void IMC::guardar()
 {
-    float altura = ui->inAltura->value();
-    float peso = ui->inPeso->value();
-    float st= (peso/(altura*altura))*10000;
-
     QString nombreArchivo = QFileDialog::getSaveFileName(this,
                                                          "Guardar archivo",
                                                          QDir::home().absolutePath(),
@@ -59,11 +68,9 @@ void IMC::guardar()
     if(archivo.open(QFile::WriteOnly | QFile::Truncate)){
         // Crear un 'stream' de texto
         QTextStream salida(&archivo);
-        // Enviar los datos del resultado a la salida
-        salida << ui->outResultados->toPlainText()
-                    +"Altura: *"+ QString ::number(altura)+"*\n"
-                    +"Peso: "+QString::number(peso)+"\n"
-                    +"IMC: "+ QString::number(st);
+          //           +"Altura: *"+ QString ::number(altura)+"*\n"
+             //       +"Peso: "+QString::number(peso)+"\n"
+               //     +"IMC: "+ QString::number(st);
         ui->statusbar->showMessage("Datos almacenados en " + nombreArchivo, 5000);
     }else {
         // Mensaje de error si no se puede abrir el archivo
@@ -78,40 +85,20 @@ void IMC::guardar()
 
 void IMC::abrir()
 {
-    // Abrir cuadro de diálogo para seleccionar ubicación y nombre del archivo.
-    QString nombreArchivo = QFileDialog::getOpenFileName(this,
-                                                         "Abrir archivo",
-                                                         QDir::home().absolutePath(),
-                                                         "Archivos de salarios (*.slr)");
 
-    // Crear un objeto QFile
-    QFile archivo(nombreArchivo);
-    // Abrirlo para lectura
-    if(archivo.open(QFile::ReadOnly)){
-        // Crear un 'stream' de texto
-        QTextStream entrada(&archivo);
-        // Leer todo el contenido del archivo
-        QString datos = entrada.readAll();
-        auto totales=datos.split("*");
-        // Cargar el contenido al área de texto
-        ui->outResultados->clear();
-        ui->outResultados->setPlainText(totales[0]);
-        ui->outIMC->setText(totales[2]);
-        totales[2].toFloat();
-        ui->outActual->setText(totales[4]);
-        totales[4].toFloat();
-        ui->outAltura->setText(totales[6]);
-        totales[6].toFloat();
-        // Mostrar 5 segundo que todo fue bien
-        ui->statusbar->showMessage("Datos leidos desde " + nombreArchivo, 5000);
-    }else {
-        // Mensaje de error si no se puede abrir el archivo
-        QMessageBox::warning(this,
-                             "Abrir datos",
-                             "No se pudo abrir el archivo");
+}
+
+void IMC::mover(float st)
+{
+    if(st <=12 || st <= 18.5 ){
+        ui->outLinea->setGeometry(10,0,0,80);
+    }else if(st <= 20||st <= 24.5){
+        ui->outLinea->setGeometry(90,0,0,80);
+    }else if(st <= 25||st <= 29.9){
+        ui->outLinea->setGeometry(150,0,0,80);
+    }else if(st <= 34||st >38){
+        ui->outLinea->setGeometry(300,0,0,80);
     }
-    // Cerrar el archivo
-    archivo.close();
 }
 
 
@@ -124,7 +111,6 @@ void IMC::on_btnCalcular_clicked()
 void IMC::on_action_Nuevo_triggered()
 {
     limpiar();
-    ui->outResultados->clear();
     ui->outIMC->clear();
     ui->outActual->clear();
     ui->outAltura->clear();
@@ -148,7 +134,6 @@ void IMC::on_action_Calcular_triggered()
 {
     calcular();
 }
-
 
 
 void IMC::on_action_Salir_triggered()

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>IMC</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Resourse.qrc">
+    <normaloff>:/imc.png</normaloff>:/imc.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(63, 165, 157);</string>
   </property>
@@ -29,6 +33,238 @@ background-color: rgb(95, 158, 160);</string>
        <string>RESULTADOS OBTENIDOS</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
+       <item row="1" column="0" colspan="2">
+        <widget class="QWidget" name="widget_2" native="true">
+         <widget class="QLabel" name="label_10">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>91</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>IMC (kg/m²)</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="outIMC">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>10</y>
+            <width>111</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>351</width>
+            <height>80</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Grafica</string>
+          </property>
+          <widget class="QWidget" name="widget_4" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>31</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 255, 255);</string>
+           </property>
+          </widget>
+          <widget class="QWidget" name="widget_5" native="true">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>20</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 255, 0);</string>
+           </property>
+           <widget class="Line" name="outLinea">
+            <property name="geometry">
+             <rect>
+              <x>13</x>
+              <y>-20</y>
+              <width>16</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_6" native="true">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>20</y>
+             <width>41</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 85, 0);</string>
+           </property>
+          </widget>
+          <widget class="QWidget" name="widget_7" native="true">
+           <property name="geometry">
+            <rect>
+             <x>290</x>
+             <y>20</y>
+             <width>41</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 0, 0);</string>
+           </property>
+          </widget>
+          <widget class="QWidget" name="widget_8" native="true">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>20</y>
+             <width>41</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 127);</string>
+           </property>
+          </widget>
+          <widget class="QWidget" name="widget_9" native="true">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>20</y>
+             <width>41</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 85, 127);</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>50</y>
+             <width>351</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>15    16        18.5           25        30     35      40</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>0</y>
+            <width>211</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Nivel de peso:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="outimc">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>10</y>
+            <width>171</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QWidget" name="widget_3" native="true">
+         <widget class="QLabel" name="label_11">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>55</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Altura:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="outAltura">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>113</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>298</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="0" column="0">
         <widget class="QWidget" name="widget" native="true">
          <layout class="QGridLayout" name="gridLayout_4">
@@ -89,106 +325,49 @@ background-color: rgb(95, 158, 160);</string>
          </layout>
         </widget>
        </item>
-       <item row="0" column="1">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+       <item row="2" column="1">
+        <widget class="QWidget" name="widget_10" native="true">
+         <property name="styleSheet">
+          <string notr="true">font: 8pt &quot;Verdana&quot;;
+color: rgb(0, 0, 0);</string>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>298</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="QWidget" name="widget_2" native="true">
-         <widget class="QLabel" name="label_10">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>91</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>IMC (kg/m²)</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="outIMC">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>10</y>
-            <width>111</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QPlainTextEdit" name="outResultados">
-          <property name="geometry">
-           <rect>
-            <x>300</x>
-            <y>30</y>
-            <width>191</width>
-            <height>85</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(95, 158, 160);
-border-color: rgb(65, 158, 160);
-selection-background-color: rgb(65, 158, 160);
-selection-color: rgb(65, 158, 160);
-gridline-color: rgb(65, 158, 160);
-border-left-color: rgb(65, 158, 160);
-border-bottom-color: rgb(65, 158, 160);
-border-right-color: rgb(65, 158, 160);
-border-top-color: rgb(65, 158, 160);
-border-color: rgb(65, 158, 160);
-color: rgb(95, 158, 160);</string>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QWidget" name="widget_3" native="true">
-         <widget class="QLabel" name="label_11">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>55</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Altura:</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="outAltura">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>30</y>
-            <width>113</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-         </widget>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>IDENTIFICACION</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Nombre :Angel Pozo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Cedula: 1753688017</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Grupo: 3 </string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Fecha: 02/02/2022</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -390,6 +569,8 @@ background-color: rgb(255, 255, 255);</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resourse.qrc"/>
+ </resources>
  <connections/>
 </ui>

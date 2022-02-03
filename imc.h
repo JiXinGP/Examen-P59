@@ -30,10 +30,16 @@ private slots:
 
 private:
     Ui::IMC *ui;
+
+    float m_altura;
+    float m_peso;
+    float m_imc;
+
     void limpiar ();
     void calcular();
     void guardar();
     void abrir();
+    void mover(float st);
 
 };
 #endif // IMC_H
